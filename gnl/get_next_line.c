@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cprester <cprester@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cprester <cprester@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:17:41 by cprester          #+#    #+#             */
-/*   Updated: 2022/08/15 13:35:32 by cprester         ###   ########.fr       */
+/*   Updated: 2022/08/15 16:12:24 by cprester         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,15 @@ static char	*ft_strjoinn(char *s1, char *s2)
 
 	i = 0;
 	j = 0;
-	if (!ft_strlen_1(s1))
-		res = ft_strdup_1(s2, 0);
+	if (!ft_strlen(s1))
+		res = ft_strdup(s2, 0);
 	else
 	{
-		len_strs = ft_strlen_1(s1) + ft_strlen_1(s2);
+		len_strs = ft_strlen(s1) + ft_strlen(s2);
 		res = malloc((sizeof(char) * len_strs + 1));
 		if (!res)
 			return ((void *)0);
-		res = ft_join(ft_join(res, s1, 0), s2, ft_strlen_1(s1));
+		res = ft_join(ft_join(res, s1, 0), s2, ft_strlen(s1));
 	}
 	free(s1);
 	return (res);
@@ -65,13 +65,13 @@ static char	*check_next_line(char *mod, char *ptr)
 		if (ptr)
 		{
 			*ptr = '\0';
-			print_str = ft_strdup_1(mod, 0);
+			print_str = ft_strdup(mod, 0);
 			ptr++;
 			ft_strcpy(mod, ptr);
 		}
 		else
-		{	
-			print_str = ft_strdup_1(mod, 0);
+		{
+			print_str = ft_strdup(mod, 0);
 			free(mod);
 		}
 	}
@@ -84,7 +84,7 @@ static char	*check_ptr(char *ptr, char *mod, int rd)
 	{
 		*ptr = '\0';
 		ptr++;
-		mod = ft_strdup_1(ptr, 0);
+		mod = ft_strdup(ptr, 0);
 	}
 	if (!rd)
 		return (NULL);

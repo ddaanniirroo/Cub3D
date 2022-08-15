@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cprester <cprester@student.42.fr>          +#+  +:+       +#+        */
+/*   By: cprester <cprester@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:17:36 by cprester          #+#    #+#             */
-/*   Updated: 2022/08/15 13:35:01 by cprester         ###   ########.fr       */
+/*   Updated: 2022/08/15 16:12:42 by cprester         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	ft_strlen_1(char const *str)
+int	ft_strlen(char const *str)
 {
 	int	i;
 
@@ -25,7 +25,7 @@ int	ft_strlen_1(char const *str)
 	return (i);
 }
 
-char	*ft_strdup_1(char *src, int flag)
+char	*ft_strdup(char *src, int flag)
 {
 	char	*str;
 	int		i;
@@ -33,7 +33,7 @@ char	*ft_strdup_1(char *src, int flag)
 	i = 0;
 	if (!src)
 		return (NULL);
-	str = malloc(sizeof(char) * ft_strlen_1(src) + 1 + flag);
+	str = malloc(sizeof(char) * ft_strlen(src) + 1 + flag);
 	if (!str)
 		return (NULL);
 	while (src[i] != '\0')
